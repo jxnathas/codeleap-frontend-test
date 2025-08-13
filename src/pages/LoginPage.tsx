@@ -3,9 +3,11 @@ import Login from '../components/Login';
 
 const LoginPage: React.FC = () => {
     return (
-        <div>
-            <h1>Login</h1>
-            <Login />
+        <div className="login-container">
+            <div className="login-card">
+                <h1 className="login-title">Welcome to CodeLeap network!</h1>
+                <Login />
+            </div>
         </div>
     );
 };

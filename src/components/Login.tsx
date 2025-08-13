@@ -1,26 +1,40 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
     const [username, setUsername] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        console.log('Username:', username);
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (username.trim()) {
+            localStorage.setItem('username', username);
+            navigate('/');
+        }
     };
 
+    const isButtonDisabled = username.trim() === '';
+
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="login-form">
             <div>
-                <label htmlFor="username">Username:</label>
+                <label htmlFor="username">Please enter your username</label>
                 <input
                     type="text"
                     id="username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    required
+                    placeholder="Enter your username"
                 />
             </div>
-            <button type="submit">Login</button>
+            <div className="button-container">
+                <button 
+                    type="submit" 
+                    disabled={isButtonDisabled}
+                >
+                    ENTER
+                </button>
+            </div>
         </form>
     );
 };
