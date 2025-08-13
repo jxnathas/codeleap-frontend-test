@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Login: React.FC = () => {
+interface LoginProps {
+    onLogin: () => void;
+}
+
+const Login: React.FC<LoginProps> = ({ onLogin }) => {
     const [username, setUsername] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (username.trim()) {
-            localStorage.setItem('username', username);
+            localStorage.setItem('username', username.trim());
+            onLogin();
             navigate('/');
         }
     };
