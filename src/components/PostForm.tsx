@@ -24,7 +24,7 @@ const PostForm: React.FC<{ onSubmit: (title: string, text: string) => void }> = 
                 />
             </div>
             <div>
-                <label htmlFor="text">Text:</label>
+                <label htmlFor="text">Content:</label>
                 <textarea
                     id="text"
                     value={text}
@@ -32,7 +32,7 @@ const PostForm: React.FC<{ onSubmit: (title: string, text: string) => void }> = 
                     required
                 />
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Create</button>
         </form>
     );
 };

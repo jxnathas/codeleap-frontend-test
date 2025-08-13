@@ -13,10 +13,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.main-container {
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #eeee;
+    height: 100vh;
+}
+
 .container {
-  max-width: 600px;
+  max-width: 783px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 20px 10px;
 }
 
 .login-container {
@@ -45,7 +52,7 @@ h1 {
   font-weight: 700;
   color: #1a1a1a;
   margin: 0 0 24px 0;
-  text-align: center;
+  text-align: left;
 }
 
 h2 {
@@ -215,7 +222,6 @@ button:disabled {
   color: white;
 }
 
-/* Card styling for posts page */
 .card {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
@@ -225,7 +231,7 @@ button:disabled {
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.1),
     0 1px 0 rgba(255, 255, 255, 0.5) inset;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #999999;
 }
 
 @media (max-width: 640px) {

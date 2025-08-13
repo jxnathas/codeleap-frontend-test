@@ -8,18 +8,20 @@ interface PostListProps {
 const PostList: React.FC<PostListProps> = ({ posts }) => {
   return (
     <div>
-      <h2>Post List</h2>
+      <h2>Recent Posts</h2>
       {posts.length === 0 ? (
-        <p>No posts available.</p>
+        <div className="empty-state">
+          <p>No posts yet. Create your first post above!</p>
+        </div>
       ) : (
-        <ul>
-          {posts.map((post, index) => (
-            <li key={index}>
-              <h3>{post.title}</h3>
-              <p>{post.text}</p>
-            </li>
+        <div>
+          {posts.map((post) => (
+            <div key={post.id} className="post">
+              <div className="post-title">{post.title}</div>
+              <div className="post-text">{post.text}</div>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
