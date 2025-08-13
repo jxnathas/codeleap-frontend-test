@@ -1,69 +1,57 @@
-# React + TypeScript + Vite
+# CodeLeap Network
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Users for test: Vitor, Vini and Jon
+Feel free to create other and test
 
-Currently, two official plugins are available:
+## 📦 Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd codeleap-frontend-test
+   ```
 
-## Expanding the ESLint configuration
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This command will start both the Vite development server and the JSON Server API concurrently.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Features
+
+- **Authentication System**: Simple username-based login system
+- **Post Management**: Create, read, update, and delete posts
+- **Real-time Updates**: Posts are dynamically updated without page refresh
+- **Modal Interactions**: Edit and delete confirmations through elegant modals
+- **Permission System**: Users can only edit/delete their own posts
+- **Guest Browsing**: View posts without logging in
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 19.1.1 with TypeScript
+- **Build Tool**: Vite 7.1.2
+- **Routing**: React Router DOM 7.8.0
+- **Backend**: JSON Server (mock API)
+- **Icons**: React Icons
+- **Styling**: Pure CSS with modern design principles
+
+## 🚀 Available Scripts
+
+- `npm run dev` - Starts both the React app and JSON Server API
+- `npm run api` - Starts only the JSON Server on port 3001
+- `npm run build` - Builds the app for production
+- `npm run lint` - Runs ESLint for code quality checks
+- `npm run preview` - Preview the production build
+
+## 🏗️ Project Structure
+
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+src/
+├──
